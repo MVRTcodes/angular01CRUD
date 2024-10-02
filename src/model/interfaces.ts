@@ -1,6 +1,6 @@
 export interface IVacanca {
 
-        id: string;
+        id: number;
         nom: string;
         preu: number;
         actiu: boolean;

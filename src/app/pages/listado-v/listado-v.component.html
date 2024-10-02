@@ -1,0 +1,12 @@
+<app-header [title]="'Listado Vacaciones'"></app-header>
+
+<section class="section-bar">
+
+    <a [routerLink]="'../home'">Home</a>
+    <a [routerLink]="'../formulario-v'">Añadir sitio vacacional</a>
+
+</section>
+
+<section class="results">
+    <app-section-v *ngFor="let vacanca of ListaVacances" [iVacanca]="vacanca"></app-section-v>
+</section>

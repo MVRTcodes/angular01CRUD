@@ -1,0 +1,35 @@
+<app-header [title]="'Formulario Vacaciones'"></app-header>
+
+<section class="section-bar">
+
+    <a [routerLink]="'../home'">Home</a>
+    <a [routerLink]="'../listado-v'">Volver al listado Vacacional</a>
+
+</section>
+
+<section class="form-v">
+    <form [formGroup]="applyForm" (submit)="submitApplication()">
+        <label for="nombre">Nombre: </label>
+        <input id="nombre-v" type="text" formControlName="nombreV"/>
+
+        <label for="precio">Precio: </label>
+        <input id="precio-v" type="text" formControlName="precioV"/>
+
+        <label for="activo">Activo: </label>
+        <input id="activo-v" type="text" formControlName="activoV"/>
+
+        <label for="pais">Pais: </label>
+        <input id="pais-v" type="text" formControlName="paisV"/>
+
+        <label for="desc">Descripción: </label>
+        <input id="desc-v" type="text" formControlName="descV"/>
+        <button type="submit" class="primary">Apply now</button>
+    </form>
+</section>
+
+<!-- id: 1,
+nom: 'Hotel 3 estrellas Granada',
+preu: 250,
+actiu: true,
+pais: 'España',
+descripcio: 'Sitio de vacaciones', -->
