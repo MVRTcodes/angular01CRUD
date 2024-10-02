@@ -12,6 +12,5 @@ import { HeaderComponent } from '../shared/components/header/header.component';
 export class HomeComponent implements OnInit {
   
   ngOnInit(): void {
-    console.log("Hello World!");
   }
 }
