@@ -1,10 +1,35 @@
-<app-header [title]="'Listado Vacaciones'"></app-header>
+<app-header [title]="'Listado Vacacional'"></app-header>
 
 <section class="section-bar">
 
     <a [routerLink]="'../home'">Home</a>
-    <a [routerLink]="'../formulario-v'">Añadir sitio vacacional</a>
 
+</section>
+
+<section class="form-v">
+    <form [formGroup]="applyForm" (submit)="submitApplication()">
+        <label for="nombre">Nombre: </label>
+        <input id="nombre-v" type="text" formControlName="nombreV"/>
+
+        <label for="precio">Precio: </label>
+        <input id="precio-v" type="number" formControlName="precioV"/>
+
+        <!-- <label for="activo">Activo: </label>
+        <input id="activo-v" type="text" formControlName="activoV"/> -->
+
+        <label for="activo">Activo: </label>
+        <select id="activo-v" formControlName="activoV">
+            <option value="y">Si</option>
+            <option value="n">No</option>
+        </select>
+
+        <label for="pais">Pais: </label>
+        <input id="pais-v" type="text" formControlName="paisV"/>
+
+        <label for="desc">Descripción: </label>
+        <input id="desc-v" type="text" formControlName="descV"/>
+        <button type="submit" class="primary">Añadir</button>
+    </form>
 </section>
 
 <section class="results">

@@ -1,7 +1,8 @@
 <section class="listing">
     <h2 class="listing-heading">{{ iVacanca.nom }}</h2>
     <p class="listing-location">Precio: {{ iVacanca.preu}} €</p>
-    <p class="listing-location">Disponible: {{iVacanca.actiu}}</p>
-    <p class="listing-location">Pais: {{ iVacanca.pais}} €</p>
+    <p class="listing-location" *ngIf="iVacanca.actiu === true">Disponible: Si</p>
+    <p class="listing-location" *ngIf="iVacanca.actiu === false">Disponible: No</p>
+    <p class="listing-location">Pais: {{ iVacanca.pais}} </p>
     <p class="listing-location">Descripción: {{ iVacanca.descripcio}}</p>
 </section>
