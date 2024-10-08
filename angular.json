@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular01CRUD": {
+    "angular01crud": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular01CRUD:build:production"
+              "buildTarget": "angular01crud:build:production"
             },
             "development": {
-              "buildTarget": "angular01CRUD:build:development"
+              "buildTarget": "angular01crud:build:development"
             }
           },
           "defaultConfiguration": "development"
