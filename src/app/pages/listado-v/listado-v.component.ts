@@ -48,21 +48,28 @@ export class ListadoVComponent {
     descV: new FormControl(''),
   })
 
-  constructor(private router: Router, private vacances: VacancesService){
-    this.ListaVacances = vacances.getVacances();
-    // this.ListaVacances = vacances.getVacances();
+  constructor(private router: Router, private vacancesService: VacancesService){
+    this.getVacances();
+    //this.ListaVacances = vacances.getVacances();
     // console.log(this.ListaVacances);
+
   }
 
   // goToHome(){
   //   this.router.navigateByUrl('home');
   // }
 
+  getVacances() {
+    this.vacancesService.getVacances().subscribe((vacances: IVacanca[]) => {
+      this.ListaVacances = vacances;
+    });
+  }
+
   submitApplication() {
 
     if(this.applyForm.valid){
 
-      const ultimoId = this.ListaVacances.at(-1)?.id;
+      // const ultimoId = this.ListaVacances.at(-1)?.id;
       
       this.vacanca = {
         //id: ultimoId != undefined ? ultimoId ?? 0 + 1 : 0,
@@ -73,9 +80,8 @@ export class ListadoVComponent {
         descripcio: this.applyForm.value.descV ?? ''
       }
       console.log(this.ListaVacances);
-      this.ListaVacances.push(this.vacanca);
-      this.vacances.updateVacanca(this.ListaVacances);
-      console.log(this.ListaVacances);
+      this.vacancesService.addVacanca(this.vacanca);
+      // this.vacancesService.updateVacanca(this.ListaVacances);
     }else{
       alert("form invalido");
     }
